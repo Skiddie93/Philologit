@@ -21,6 +21,7 @@ async function fetchLangs(repos) {
 }
 
 async function render(lang) {
+  let renderStr = ""
   let allLangs = {
     sum: 0
   }
@@ -36,9 +37,10 @@ async function render(lang) {
   })
   for (atr in allLangs) {
     if (atr != "sum") {
-      display.innerHTML += "<div class='item'><p>" + atr + "</p><p>" + Math.round((100 * allLangs[atr] / allLangs.sum) * 10) / 10 + "%</p></div>"
+      renderStr += "<div class='item'><p>" + atr + "</p><p>" + Math.round((100 * allLangs[atr] / allLangs.sum) * 10) / 10 + "%</p></div>"
     }
   }
+  display.innerHTML = renderStr
 }
 
 
