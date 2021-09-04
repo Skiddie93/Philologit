@@ -1,9 +1,11 @@
 const display = document.getElementById('display')
+const inputName = document.getElementById('inputName')
+const inputSubmit = document.getElementById('inputSubmit')
 
-async function fetchRepo() {
-  let get = await fetch("https://api.github.com/users/skiddie93/repos")
+async function fetchRepo(userName) {
+  let get = await fetch("https://api.github.com/users/"+userName+"/repos")
   let data = await get.json();
-
+  console.log(data);
   return data
 }
 
@@ -44,10 +46,14 @@ async function render(lang) {
 }
 
 
-async function processData() {
-  let data = await fetchRepo()
+async function processData(userName) {
+
+  let data = await fetchRepo(userName)
   let langsData = await fetchLangs(data)
   render(langsData)
 }
 
-processData()
+inputSubmit.addEventListener('click', function(){
+  let nameValue = inputName.value
+  processData(nameValue)
+})

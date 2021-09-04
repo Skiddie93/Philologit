@@ -1,13 +1,13 @@
-*{
+* {
   padding: 0;
   margin: 0;
 }
 
-.display{
+.display {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   width: 75%;
   display: flex;
   flex-wrap: wrap;
@@ -15,7 +15,7 @@
   align-items: center;
 }
 
-.item{
+.item {
   margin-bottom: 30px;
   width: 25%;
   font-size: 2rem;
@@ -25,12 +25,21 @@
   align-items: center;
 }
 
-p{
+p {
   font-family: sans-serif;
 }
 
-.test{
-  width: 50vw;
-  height: 100vh;
-  background-color: lightgrey;
+.input {
+  padding: 10px;
 }
+.input #inputName {
+  display: inline;
+}
+.input .inputSubmit {
+  display: inline;
+  padding: 10px 10px 10px 10px;
+  background-color: pink;
+  cursor: pointer;
+}
+
+/*# sourceMappingURL=styles.css.map */
